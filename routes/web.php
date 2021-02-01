@@ -21,4 +21,4 @@ Route::group(['prefix' => 'admin', 'namespace' => 'Admin'], function () {
 });
 
 
-Route::get('/{section}', 'SectionController@getPageData');
+Route::get('/{virtual_name}', 'SectionController@getPageData');

@@ -7,9 +7,11 @@
  */
 
 namespace App\Http\Controllers;
+use App\Template;
 use Illuminate\Http\Request;
 
 use App\Section;
+use App\Page;
 use App\Product;
 
 class SectionController extends Controller
@@ -17,32 +19,34 @@ class SectionController extends Controller
 
     public function __construct()
     {
-        //$pages = Section::where('id', '7')->get();
-        $page_title = Section::find(7)['title'];
 
     }
 
     public function index()
     {
-        return view('single-1');
+        // return view('single-1');
     }
 
     public function getPageData(Request $request)
     {
-        $page = Section::where('virtual_name', $request->section)->get();
+        $page = Page::where('virtual_name', $request->virtual_name)->get();
+        $page[0]->view->model;
 
         if (sizeof($page)>0) {
             $page_data = $page[0];
             $template_id = $page_data['template_id'];
+            $template_view = $page[0]->view->model;
 
             switch ($template_id){
                 case 3:
-                    $template_view = 'shop-grid-left-sidebar';
+                    //$products = $page[0]->products;
+                    //echo $products;die;
                     $products = $this->getProducts($page_data['id']);
                     break;
                 case 4:
-                    $template_view = 'single-1';
                     $products = null;
+                    print_r($page[0]->pageable);//die;
+                    //print_r($product);die;
                     break;
             }
 

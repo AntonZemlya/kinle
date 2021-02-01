@@ -8,6 +8,7 @@
     <link rel="stylesheet" href="https://code.ionicframework.com/ionicons/2.0.1/css/ionicons.min.css">
     <link href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,400i,700" rel="stylesheet">
     <link rel="stylesheet" href="{{ asset('assets/admin/css/admin.css') }}">
+    <link rel="stylesheet" href="{{ asset('assets/admin/new/dataTables.bootstrap4.css') }}">
 </head>
 <body class="hold-transition sidebar-mini">
 <!-- Site wrapper -->
@@ -224,6 +225,12 @@
 <!-- ./wrapper -->
 
 <script src="{{ asset('assets/admin/js/admin.js') }}"></script>
+<script src="{{ asset('assets/admin/new/jquery.min.js') }}"></script>
+<script src="{{ asset('assets/admin/new/bootstrap.bundle.min.js') }}"></script>
+<script src="{{ asset('assets/admin/new/jquery.dataTables.js') }}"></script>
+<script src="{{ asset('assets/admin/new/dataTables.bootstrap4.js') }}"></script>
+<script src="{{ asset('assets/admin/new/adminlte.min.js') }}"></script>
+<script src="{{ asset('assets/admin/new/demo.js') }}"></script>
 
 </body>
 </html>
